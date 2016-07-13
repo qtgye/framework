@@ -9,6 +9,7 @@
    
 
     <!-- Styles -->
+    <link rel="stylesheet" href="css/public/app.css">
 
 </head>
 <body>
@@ -16,7 +17,7 @@
     @yield('content')
 
     <!-- JavaScripts -->
-    
+    <script src="js/public/all.js"></script>
 
 </body>
 </html>
