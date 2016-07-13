@@ -1,0 +1,21 @@
+{
+  "name": "budget",
+  "description": "Personal budget management web app",
+  "main": "",
+  "authors": [
+    "'Jayson Buquia buquia.jace@gmail.com'"
+  ],
+  "license": "MIT",
+  "homepage": "https://www.jaysonbuquia.com/budget",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.6"
+  }
+}
