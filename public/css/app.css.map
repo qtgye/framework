@@ -1,1 +1,0 @@
-{"version":3,"sources":["modules/_test.scss"],"names":[],"mappings":"AAAA;EACC,eAAe,EACf;;AAED;EACC,sBAAsB,EACtB","file":"app.css","sourcesContent":[".test {\n\tdisplay: block;\n}\n\n.test2 {\n\tdisplay: inline-block;\n}"],"sourceRoot":"/source/"}
