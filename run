@@ -1,0 +1,39 @@
+<?php 
+
+require_once 'vendor/autoload.php';
+
+
+/**
+ * ------------------------------------------------
+ * PARSE COMMAND AND ARGUMENTS FROM INPUT
+ * ------------------------------------------------
+ */
+
+if ( count($argv) > 1 ) {
+
+	$args = $argv;
+
+	// First item is the 'run' itself, no need for it
+	array_shift($args); 
+
+	$command = explode(':', array_shift($args));
+	$options = array_map(function ( $option )
+				{
+					$option = preg_split('/[:=]/i',$option);
+					$option[0] = str_replace('--', '', $option[0]);
+
+					return isset($option[1])
+							? [ $option[0] => $option[1] ]
+							: $option[0];
+				}, $args);
+
+	$command_class = '\\App\Commands\\'.ucfirst($command[0]);
+	$command_option = !empty($command[1]) ? $command[1] : null ;
+
+	if ( class_exists( $command_class ) ) {
+		$command_object = new $command_class($options);
+		$command_object->run($command_option);
+	}
+}
+
+?>
