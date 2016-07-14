@@ -5,13 +5,13 @@
 */
 class BaseCommand
 {
-	protected $options;
+	protected $arguments;
 
 	protected $appDir;
 	
-	function __construct($options)
+	function __construct($arguments)
 	{
-		$this->options = $options;
+		$this->arguments = $arguments;
 		$this->appDir = dirname(__DIR__);
 	}
 
