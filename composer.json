@@ -1,0 +1,16 @@
+{
+    "name": "qtgye/budget",
+    "description": "My personal budget management web app",
+    "authors": [
+        {
+            "name": "Jayson Buquia",
+            "email": "buquia.jace@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload" : {
+    	"psr-4" : {
+    		"App\\" : "app/"
+    	}
+    }
+}
