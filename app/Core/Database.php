@@ -31,7 +31,7 @@ class Database
 		$this->password	= Config::get('DB_PASSWORD');
 		$this->database	= Config::get('DB_NAME');
 
-		$this->pdo = new \PDO("mysql:host={$this->host};dbname={$this->database};charset=utf8mb4", $this->user, $this->password);
+		$this->connect();
 	}
 
 
@@ -41,5 +41,11 @@ class Database
 			static::$instance = new static;
 		}
 		return static::$instance;
+	}
+
+
+	private function connect()
+	{
+		$this->pdo = new \PDO("mysql:host={$this->host};dbname={$this->database};charset=utf8mb4", $this->user, $this->password);
 	}
 }
