@@ -1,6 +1,6 @@
 {
 	"DB_HOST" 		: "localhost",
-	"DB_NAME" 		: "test_framework",
-	"DB_USER" 		: "jace",
-	"DB_PASSWORD" 	: "psalm2326"
+	"DB_NAME" 		: "",
+	"DB_USER" 		: "root",
+	"DB_PASSWORD" 	: ""
 }
