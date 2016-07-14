@@ -23,20 +23,4 @@ class Test extends BaseCommand
 	}
 
 
-	private function config()
-	{
-		// var_dump(ROOT_DIR);
-		// var_dump(APP_DIR);
-		// var_dump(ASSETS_DIR);
-		// var_dump(PUBLIC_DIR);
-
-		var_dump(\App\Core\Config::get('DB_HOST'));
-	}
-
-
-	private function db()
-	{
-		var_dump(\App\Core\Database::get_instance());
-	}
-
 }

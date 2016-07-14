@@ -22,7 +22,7 @@ class Make extends BaseCommand
 		$contents = $this->getClassFileContents($type);
 		$contents = str_replace('{{'.$type.'}}', $class, $contents);	
 
-		$this->printOut("\r\n\033[1;30mGenerating {$type}: {$class}...\033[0m\r\n\r\n");
+		$this->_echo("\r\n\033[1;30mGenerating {$type}: {$class}...\033[0m\r\n\r\n");
 
 		if ( file_put_contents($this->appDir."/{$this->makeClasses[$type]}/{$class}.php", $contents) ) {
 			die("\033[32mSuccess!\033[0m\r\n\r\n");
@@ -43,7 +43,7 @@ class Make extends BaseCommand
 			$classname = array_shift($this->options);
 
 			if ( !$classname ) {
-				$this->printOut("\033[31mPlease provide a class name.\033[37m" . PHP_EOL);
+				$this->_echo("\033[31mPlease provide a class name.\033[37m" . PHP_EOL);
 				exit();
 			}
 
