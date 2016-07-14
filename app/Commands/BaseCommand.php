@@ -22,12 +22,12 @@ class BaseCommand
 	}
 
 	/**
-	 * Prints to CLI
+	 * Echoes to CLI
 	 * @param  string $output The string to display
 	 * @return void 
 	 */
-	public function printOut($output)
+	public function _echo($output)
 	{
-		echo $output;
+		echo $output . "\033[0m" . PHP_EOL;
 	}
 }
