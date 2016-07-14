@@ -54,7 +54,7 @@ class Server extends BaseCommand
 		});
 
 		if ( isset($result[0]) ) {
-			preg_match('/\s?[0-9]{4}\s?/', $result[0], $matches);
+			preg_match('/\s?[0-9]{4,9}\s?/', $result[0], $matches);
 			$pid = !empty($matches[0]) ? trim($matches[0]) : NULL;
 			return $pid;
 		}
