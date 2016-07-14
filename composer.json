@@ -1,6 +1,6 @@
 {
-    "name": "qtgye/budget",
-    "description": "My personal budget management web app",
+    "name": "qtgye/framework",
+    "description": "My custom build simple framework",
     "authors": [
         {
             "name": "Jayson Buquia",
@@ -12,5 +12,8 @@
     	"psr-4" : {
     		"App\\" : "app/"
     	}
+    },
+    "scripts" : {
+        "post-install-cmd" : "composer dump-autoload"
     }
 }
