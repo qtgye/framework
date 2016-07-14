@@ -49,4 +49,26 @@ class Test extends BaseCommand
 		// $this->assert('Some Test Here...',TRUE);
 	}
 
+
+	private function config()
+	{
+		$paths = defined('ROOT_DIR')
+				&& 	defined('APP_DIR')
+				&& 	defined('ASSETS_DIR')
+				&& 	defined('PUBLIC_DIR');
+
+var_dump(ROOT_DIR);
+var_dump(APP_DIR);
+var_dump(ASSETS_DIR);
+var_dump(PUBLIC_DIR)		;
+
+		$this->assert('Config should set directory path constants',$paths);
+	}
+
+
+	private function db()
+	{
+		var_dump(\App\Core\Database::get_instance());
+	}
+
 }
