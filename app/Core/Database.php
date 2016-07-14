@@ -21,7 +21,7 @@ class Database
 	/**
 	 * DB connection
 	 */
-	private $pdo;
+	public $pdo;
 	
 
 	function __construct()
