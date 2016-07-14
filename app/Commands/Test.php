@@ -13,6 +13,14 @@ class Test extends BaseCommand
 
 	public function run($param)
 	{
-		// body...
+		$method = $param;
+
+		if ( method_exists($this, $method) ) {
+			call_user_func_array([$this,$method], [$this->options]);
+		} else {
+			$this->_echo("\033[31m\r\nInvalid test method.\r\n");
+		}
 	}
+
+
 }
