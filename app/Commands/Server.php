@@ -23,7 +23,7 @@ class Server extends BaseCommand
 		$pid = $this->get_serve_pid();
 
 		if ( $pid ) {
-			$this->_echo("\033[37m\r\nServer is already running.\r\n");
+			$this->_echo("\033[32m\r\nServer is already running.\r\n");
 		} else {
 			shell_exec('php -S localhost:8000 -t public/ &> /dev/null &');
 			$this->_echo("\033[0;36m\r\nStarting built-in server on localhost:8000" . PHP_EOL);
