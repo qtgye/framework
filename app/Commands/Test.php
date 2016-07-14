@@ -32,4 +32,11 @@ class Test extends BaseCommand
 
 		var_dump(\App\Core\Config::get('DB_HOST'));
 	}
+
+
+	private function db()
+	{
+		var_dump(\App\Core\Database::get_instance());
+	}
+
 }
