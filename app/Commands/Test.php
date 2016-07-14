@@ -68,6 +68,8 @@ class Test extends BaseCommand
 
 	private function config()
 	{
+		Config::setup();
+
 		$paths = defined('ROOT_DIR')
 				&& 	defined('APP_DIR')
 				&& 	defined('ASSETS_DIR')
@@ -79,6 +81,8 @@ class Test extends BaseCommand
 
 	private function db()
 	{
+		Config::setup();
+		
 		$file_exists = file_exists(ROOT_DIR.'/.config');
 		$this->assert('A config file should be existing',$file_exists);
 
