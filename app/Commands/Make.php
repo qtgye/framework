@@ -33,7 +33,7 @@ class Make extends BaseCommand
 
 	private function getClassFileContents($type)
 	{
-		$contents = file_get_contents($this->appDir."/Helpers/class_templates/{$type}.php");
+		$contents = file_get_contents($this->appDir."/Commands/stubs/{$type}");
 		return $contents;
 	}
 
