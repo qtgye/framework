@@ -8,7 +8,9 @@ use App\Core\Database;
 */
 class Test extends BaseCommand
 {	
-	private $failed_asserts = 0;
+	private $assertions = 0;
+
+	private $passed_asserts = 0;
 
 	function __construct($arguments)
 	{
@@ -28,13 +30,16 @@ class Test extends BaseCommand
 			$this->_echo("\033[31m\r\nInvalid test method.\r\n");
 		}
 
-		if ( $this->failed_asserts > 0 ) {
-			$this->_echo("\r\n\033[41;1;37m\r\n   {$this->failed_asserts} ASSERTION".($this->failed_asserts>1?'S':'')." FAILED!  ");
-		} else {
-			$this->_echo("\r\n\033[32m\r\n   ALL ASSERTIONS PASSED!");
-		}
+		if ( $this->assertions > 0 ) {
+			if ( $this->failed_asserts != $this->assertions ) {
+				$this->_echo("\r\n\033[41;1;37m\r\n   {$this->failed_asserts} ASSERTION".($this->failed_asserts>1?'S':'')." FAILED!  ");
+			} else {
+				$this->_echo("\r\n\033[32m\r\n   ALL ASSERTIONS PASSED!");
+			}
+		}		
 
 		$this->_echo("\r\n\r\n");
+		
 	}
 
 
