@@ -61,4 +61,49 @@ class Test extends BaseCommand
 		}
 	}
 
+
+	/**
+	 * Runs all the tests
+	 */
+	private function all()
+	{
+		// $this->assert('Some Test Here...',TRUE);
+	}
+
+
+	private function config()
+	{
+		Config::setup();
+
+		$paths = defined('ROOT_DIR')
+				&& 	defined('APP_DIR')
+				&& 	defined('ASSETS_DIR')
+				&& 	defined('PUBLIC_DIR');
+
+		$this->assert('Config should set directory path constants',$paths);
+	}
+
+
+	private function db()
+	{
+		Config::setup();
+		
+		$file_exists = file_exists(ROOT_DIR.'/.config');
+		$this->assert('A config file should be existing',$file_exists);
+
+		if ( $file_exists ) {
+			$db_config = Config::get('DB_HOST')
+						&& Config::get('DB_USER')
+						&& Config::get('DB_PASSWORD')
+						&& Config::get('DB_NAME');
+			$this->assert('Should have basic database connection variables',$db_config);
+		}
+
+		if ( $db_config ) {
+			$this->assert('Should connect to database using correct settings',
+							Database::get_instance()->pdo instanceof \PDO);
+		}
+
+	}
+
 }
