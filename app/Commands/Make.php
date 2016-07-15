@@ -8,7 +8,8 @@ class Make extends BaseCommand
 	private $makeClasses = [
 				'command' 		=> 'Commands',
 				'model' 		=> 'Models',
-				'controller' 	=> 'Controllers'
+				'controller' 	=> 'Controllers',
+				'helper' 		=> 'Helpers'
 			];
 	
 	function __construct($options)
@@ -40,7 +41,7 @@ class Make extends BaseCommand
 	public function run($param)
 	{
 		if ( $param && array_key_exists($param, $this->makeClasses) ) {
-			$classname = array_shift($this->options);
+			$classname = array_shift($this->arguments);
 
 			if ( !$classname ) {
 				$this->_echo("\033[31mPlease provide a class name.\033[37m" . PHP_EOL);
